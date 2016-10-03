@@ -17,21 +17,27 @@
 
 const proxyquire = require(`proxyquire`).noCallThru();
 
-describe(`resource:projects`, () => {
-  it(`should handle errors`, () => {
-    const error = new Error(`error`);
-    const callback = sinon.spy();
-    const resourceMock = {
+describe(`resource:quickstart`, () => {
+  let resourceMock, ResourceMock;
+  const error = new Error(`error`);
+
+  before(() => {
+    resourceMock = {
       getProjects: sinon.stub().yields(error)
     };
-    const ResourceMock = sinon.stub().returns(resourceMock);
-    const program = proxyquire(`../projects`, {
+    ResourceMock = sinon.stub().returns(resourceMock);
+  });
+
+  it(`should handle error`, () => {
+    proxyquire(`../quickstart`, {
       '@google-cloud/resource': ResourceMock
     });
 
-    program.listProjects(callback);
-
-    assert.equal(callback.callCount, 1);
-    assert.equal(callback.alwaysCalledWithExactly(error), true);
+    assert.equal(ResourceMock.calledOnce, true);
+    assert.deepEqual(ResourceMock.firstCall.args, [{ projectId: 'YOUR_PROJECT_ID' }]);
+    assert.equal(resourceMock.getProjects.calledOnce, true);
+    assert.deepEqual(resourceMock.getProjects.firstCall.args.slice(0, -1), []);
+    assert.equal(console.error.calledOnce, true);
+    assert.deepEqual(console.error.firstCall.args, [error]);
   });
 });

@@ -15,16 +15,26 @@
 
 'use strict';
 
-const path = require(`path`);
-const run = require(`../../utils`).run;
+// [START resource_quickstart]
+// Imports the Google Cloud client library
+const Resource = require('@google-cloud/resource');
 
-const cwd = path.join(__dirname, `..`);
-const cmd = `node projects.js`;
+// Your Google Cloud Platform project ID
+const projectId = 'YOUR_PROJECT_ID';
 
-describe(`resource:projects`, () => {
-  it(`should list projects`, () => {
-    const output = run(`${cmd} list`, cwd);
-    assert.notEqual(output.indexOf(`Projects:`), -1);
-    assert.notEqual(output.indexOf(`${process.env.GCLOUD_PROJECT}`), -1);
-  });
+// Instantiates a client
+const resourceClient = Resource({
+  projectId: projectId
 });
+
+// Lists current projects
+resourceClient.getProjects((err, projects) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+
+  console.log('Projects:');
+  projects.forEach((project) => console.log(project.id));
+});
+// [END resource_quickstart]
