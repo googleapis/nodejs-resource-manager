@@ -22,8 +22,8 @@ const Resource = require('@google-cloud/resource');
 // Your Google Cloud Platform project ID
 const projectId = 'YOUR_PROJECT_ID';
 
-// Instantiates a client
-const resourceClient = Resource({
+// Creates a client
+const resourceClient = new Resource({
   projectId: projectId,
 });
 
