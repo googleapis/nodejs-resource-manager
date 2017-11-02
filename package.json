@@ -1,7 +1,7 @@
 {
   "name": "@google-cloud/resource",
   "version": "0.7.3",
-  "author": "Google Inc.",
+  "author": "Google LLC",
   "description": "Cloud Resource Manager Client Library for Node.js",
   "contributors": [
     {
@@ -36,7 +36,7 @@
     "CONTRIBUTORS",
     "LICENSE"
   ],
-  "repository": "googlecloudplatform/google-cloud-node",
+  "repository": "googleapis/nodejs-resource",
   "keywords": [
     "google apis client",
     "google api client",
@@ -64,9 +64,9 @@
     "uuid": "^3.0.1"
   },
   "scripts": {
-    "publish-module": "node ../../scripts/publish.js resource",
-    "test": "mocha test/*.js",
-    "system-test": "mocha system-test/*.js --no-timeouts --bail"
+    "generate-scaffolding": "repo-tools generate all && repo-tools generate lib_samples_readme -l samples/ --config ../.cloud-repo-tools.json",
+    "system-test": "mocha system-test/*.js --no-timeouts --bail",
+    "test": "mocha test/*.js"
   },
   "license": "Apache-2.0",
   "engines": {
