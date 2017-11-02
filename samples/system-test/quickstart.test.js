@@ -24,32 +24,31 @@ const tools = require(`@google-cloud/nodejs-repo-tools`);
 test.before(tools.stubConsole);
 test.after.always(tools.restoreConsole);
 
-test.cb(`should list projects`, (t) => {
+test.cb(`should list projects`, t => {
   const resourceMock = {
     getProjects: () => {
-      return resource.getProjects()
-        .then(([projects]) => {
-          t.true(Array.isArray(projects));
+      return resource.getProjects().then(([projects]) => {
+        t.true(Array.isArray(projects));
 
-          setTimeout(() => {
-            try {
-              t.true(console.log.called);
-              t.deepEqual(console.log.firstCall.args, [`Projects:`]);
-              projects.forEach((project, i) => {
-                t.deepEqual(console.log.getCall(i + 1).args, [project.id]);
-              });
-              t.end();
-            } catch (err) {
-              t.end(err);
-            }
-          }, 200);
+        setTimeout(() => {
+          try {
+            t.true(console.log.called);
+            t.deepEqual(console.log.firstCall.args, [`Projects:`]);
+            projects.forEach((project, i) => {
+              t.deepEqual(console.log.getCall(i + 1).args, [project.id]);
+            });
+            t.end();
+          } catch (err) {
+            t.end(err);
+          }
+        }, 200);
 
-          return [projects];
-        });
-    }
+        return [projects];
+      });
+    },
   };
 
   proxyquire(`../quickstart`, {
-    '@google-cloud/resource': sinon.stub().returns(resourceMock)
+    '@google-cloud/resource': sinon.stub().returns(resourceMock),
   });
 });

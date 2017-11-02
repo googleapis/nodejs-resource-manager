@@ -15,34 +15,36 @@
 
 'use strict';
 
-function listProjects () {
+function listProjects() {
   // [START resource_list_projects]
   // Imports the Google Cloud client library
   const Resource = require('@google-cloud/resource');
 
-  // Instantiates a client
-  const resource = Resource();
+  // Creates a client
+  const resource = new Resource();
 
   // Lists all current projects
-  resource.getProjects()
-    .then((results) => {
+  resource
+    .getProjects()
+    .then(results => {
       const projects = results[0];
       console.log('Projects:');
-      projects.forEach((project) => console.log(project.id));
+      projects.forEach(project => console.log(project.id));
     })
-    .catch((err) => {
+    .catch(err => {
       console.error('ERROR:', err);
     });
   // [END resource_list_projects]
 }
 
-require(`yargs`) // eslint-disable-line
+require(`yargs`)
   .demand(1)
   .command(`list`, `List all current projects.`, {}, listProjects)
   .example(`node $0 list`, `Lists all current projects.`)
   .wrap(120)
   .recommendCommands()
-  .epilogue(`For more information, see https://cloud.google.com/resource-manager/docs`)
+  .epilogue(
+    `For more information, see https://cloud.google.com/resource-manager/docs`
+  )
   .help()
-  .strict()
-  .argv;
+  .strict().argv;
