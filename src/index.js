@@ -52,7 +52,7 @@ var Project = require('./project.js');
 function Resource(options) {
   if (!(this instanceof Resource)) {
     options = common.util.normalizeArguments(this, options, {
-      projectIdRequired: false
+      projectIdRequired: false,
     });
     return new Resource(options);
   }
@@ -61,7 +61,7 @@ function Resource(options) {
     baseUrl: 'https://cloudresourcemanager.googleapis.com/v1',
     scopes: ['https://www.googleapis.com/auth/cloud-platform'],
     projectIdRequired: false,
-    packageJson: require('../package.json')
+    packageJson: require('../package.json'),
   };
 
   common.Service.call(this, config, options);
@@ -130,25 +130,28 @@ Resource.prototype.createProject = function(id, options, callback) {
     options = {};
   }
 
-  this.request({
-    method: 'POST',
-    uri: '/projects',
-    json: extend({}, options, {
-      projectId: id
-    })
-  }, function(err, resp) {
-    if (err) {
-      callback(err, null, resp);
-      return;
+  this.request(
+    {
+      method: 'POST',
+      uri: '/projects',
+      json: extend({}, options, {
+        projectId: id,
+      }),
+    },
+    function(err, resp) {
+      if (err) {
+        callback(err, null, resp);
+        return;
+      }
+
+      var project = self.project(resp.projectId);
+
+      var operation = self.operation(resp.name);
+      operation.metadata = resp;
+
+      callback(null, project, operation, resp);
     }
-
-    var project = self.project(resp.projectId);
-
-    var operation = self.operation(resp.name);
-    operation.metadata = resp;
-
-    callback(null, project, operation, resp);
-  });
+  );
 };
 
 /**
@@ -209,31 +212,34 @@ Resource.prototype.getProjects = function(options, callback) {
 
   options = options || {};
 
-  this.request({
-    uri: '/projects',
-    qs: options
-  }, function(err, resp) {
-    if (err) {
-      callback(err, null, null, resp);
-      return;
-    }
+  this.request(
+    {
+      uri: '/projects',
+      qs: options,
+    },
+    function(err, resp) {
+      if (err) {
+        callback(err, null, null, resp);
+        return;
+      }
 
-    var nextQuery = null;
+      var nextQuery = null;
 
-    if (resp.nextPageToken) {
-      nextQuery = extend({}, options, {
-        pageToken: resp.nextPageToken
+      if (resp.nextPageToken) {
+        nextQuery = extend({}, options, {
+          pageToken: resp.nextPageToken,
+        });
+      }
+
+      var projects = (resp.projects || []).map(function(project) {
+        var projectInstance = self.project(project.projectId);
+        projectInstance.metadata = project;
+        return projectInstance;
       });
+
+      callback(null, projects, nextQuery, resp);
     }
-
-    var projects = (resp.projects || []).map(function(project) {
-      var projectInstance = self.project(project.projectId);
-      projectInstance.metadata = project;
-      return projectInstance;
-    });
-
-    callback(null, projects, nextQuery, resp);
-  });
+  );
 };
 
 /**
@@ -262,8 +268,9 @@ Resource.prototype.getProjects = function(options, callback) {
  *     this.end();
  *   });
  */
-Resource.prototype.getProjectsStream =
-  common.paginator.streamify('getProjects');
+Resource.prototype.getProjectsStream = common.paginator.streamify(
+  'getProjects'
+);
 
 /*! Developer Documentation
  *
@@ -286,7 +293,7 @@ Resource.prototype.operation = function(name) {
 
   return new common.Operation({
     parent: this,
-    id: name
+    id: name,
   });
 };
 
@@ -324,10 +331,7 @@ common.paginator.extend(Resource, ['getProjects']);
  * that a callback is omitted.
  */
 common.util.promisifyAll(Resource, {
-  exclude: [
-    'operation',
-    'project'
-  ]
+  exclude: ['operation', 'project'],
 });
 
 Resource.Project = Project;

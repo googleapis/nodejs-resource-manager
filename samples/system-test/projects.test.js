@@ -24,7 +24,7 @@ const cmd = `node projects.js`;
 
 test.before(tools.checkCredentials);
 
-test(`should list projects`, async (t) => {
+test(`should list projects`, async t => {
   const output = await tools.runAsync(`${cmd} list`, cwd);
   t.true(output.includes(`Projects:`));
   t.true(output.includes(`${process.env.GCLOUD_PROJECT}`));

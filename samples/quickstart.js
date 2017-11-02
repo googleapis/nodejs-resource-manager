@@ -24,18 +24,19 @@ const projectId = 'YOUR_PROJECT_ID';
 
 // Instantiates a client
 const resourceClient = Resource({
-  projectId: projectId
+  projectId: projectId,
 });
 
 // Lists current projects
-resourceClient.getProjects()
-  .then((results) => {
+resourceClient
+  .getProjects()
+  .then(results => {
     const projects = results[0];
 
     console.log('Projects:');
-    projects.forEach((project) => console.log(project.id));
+    projects.forEach(project => console.log(project.id));
   })
-  .catch((err) => {
+  .catch(err => {
     console.error('ERROR:', err);
   });
 // [END resource_quickstart]

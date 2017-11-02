@@ -218,9 +218,9 @@ function Project(resource, id) {
      */
     setMetadata: {
       reqOpts: {
-        method: 'PUT'
-      }
-    }
+        method: 'PUT',
+      },
+    },
   };
 
   common.ServiceObject.call(this, {
@@ -228,7 +228,7 @@ function Project(resource, id) {
     baseUrl: '/projects',
     id: id,
     createMethod: resource.createProject.bind(resource),
-    methods: methods
+    methods: methods,
   });
 }
 
@@ -263,12 +263,15 @@ util.inherits(Project, common.ServiceObject);
 Project.prototype.restore = function(callback) {
   callback = callback || common.util.noop;
 
-  this.request({
-    method: 'POST',
-    uri: ':undelete'
-  }, function(err, resp) {
-    callback(err, resp);
-  });
+  this.request(
+    {
+      method: 'POST',
+      uri: ':undelete',
+    },
+    function(err, resp) {
+      callback(err, resp);
+    }
+  );
 };
 
 /*! Developer Documentation
