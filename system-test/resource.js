@@ -22,12 +22,11 @@ var exec = require('methmeth');
 var googleAuth = require('google-auto-auth');
 var uuid = require('uuid');
 
-var env = require('../../../system-test/env.js');
 var Resource = require('../');
 
 describe('Resource', function() {
   var PREFIX = 'gcloud-tests-';
-  var resource = new Resource(env);
+  var resource = new Resource();
   var project = resource.project();
 
   describe('resource', function() {
@@ -62,10 +61,6 @@ describe('Resource', function() {
 
         assert.notStrictEqual(metadata.projectId, undefined);
 
-        if (env.projectId) {
-          assert.strictEqual(metadata.projectId, env.projectId);
-        }
-
         done();
       });
     });
@@ -81,9 +76,7 @@ describe('Resource', function() {
     var CAN_RUN_TESTS = true;
     var testProjects = [];
 
-    var resource = new Resource({
-      projectId: env.projectId,
-    });
+    var resource = new Resource();
 
     var project = resource.project(generateName('project'));
 
