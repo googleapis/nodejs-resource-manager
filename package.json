@@ -55,6 +55,7 @@
     "is": "^3.0.1"
   },
   "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "^2.1.1",
     "arrify": "^1.0.0",
     "async": "^2.1.2",
     "google-auto-auth": "^0.7.1",
