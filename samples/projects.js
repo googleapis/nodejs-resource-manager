@@ -20,8 +20,8 @@ function listProjects() {
   // Imports the Google Cloud client library
   const Resource = require('@google-cloud/resource');
 
-  // Instantiates a client
-  const resource = Resource();
+  // Creates a client
+  const resource = new Resource();
 
   // Lists all current projects
   resource
@@ -37,7 +37,7 @@ function listProjects() {
   // [END resource_list_projects]
 }
 
-require(`yargs`) // eslint-disable-line
+require(`yargs`)
   .demand(1)
   .command(`list`, `List all current projects.`, {}, listProjects)
   .example(`node $0 list`, `Lists all current projects.`)

@@ -69,20 +69,21 @@ const Resource = require('@google-cloud/resource');
 // Your Google Cloud Platform project ID
 const projectId = 'YOUR_PROJECT_ID';
 
-// Instantiates a client
-const resourceClient = Resource({
-  projectId: projectId
+// Creates a client
+const resourceClient = new Resource({
+  projectId: projectId,
 });
 
 // Lists current projects
-resourceClient.getProjects()
-  .then((results) => {
+resourceClient
+  .getProjects()
+  .then(results => {
     const projects = results[0];
 
     console.log('Projects:');
-    projects.forEach((project) => console.log(project.id));
+    projects.forEach(project => console.log(project.id));
   })
-  .catch((err) => {
+  .catch(err => {
     console.error('ERROR:', err);
   });
 ```
@@ -121,6 +122,6 @@ Apache Version 2.0
 
 See [LICENSE](https://github.com/googleapis/nodejs-resource/blob/master/LICENSE)
 
-[client-docs]: https://cloud.google.com/nodejs/docs/reference/alpha/latest/
+[client-docs]: https://cloud.google.com/nodejs/docs/reference/resource/latest/
 [product-docs]: https://cloud.google.com/resource-manager/docs/
 [shell_img]: http://gstatic.com/cloudssh/images/open-btn.png

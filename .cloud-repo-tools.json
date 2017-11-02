@@ -2,7 +2,7 @@
   "requiresKeyFile": true,
   "requiresProjectId": true,
   "product": "resource",
-  "client_reference_url": "https://cloud.google.com/nodejs/docs/reference/alpha/latest/",
+  "client_reference_url": "https://cloud.google.com/nodejs/docs/reference/resource/latest/",
   "release_quality": "alpha",
   "samples": [
     {
