@@ -2,8 +2,6 @@
 
 # [Google Cloud Resource Manager API: Node.js Client](https://github.com/googleapis/nodejs-resource)
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/googleapis/nodejs-resource.svg)](https://greenkeeper.io/)
-
 [![release level](https://img.shields.io/badge/release%20level-alpha-orange.svg?style&#x3D;flat)](https://cloud.google.com/terms/launch-stages)
 [![CircleCI](https://img.shields.io/circleci/project/github/googleapis/nodejs-resource.svg?style=flat)](https://circleci.com/gh/googleapis/nodejs-resource)
 [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/googleapis/nodejs-resource?branch=master&svg=true)](https://ci.appveyor.com/project/googleapis/nodejs-resource)
