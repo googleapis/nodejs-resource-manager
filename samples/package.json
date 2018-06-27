@@ -18,7 +18,7 @@
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "2.2.4",
     "ava": "0.25.0",
-    "proxyquire": "1.8.0",
+    "proxyquire": "2.0.1",
     "sinon": "4.1.0"
   }
 }
