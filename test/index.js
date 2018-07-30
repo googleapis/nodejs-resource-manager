@@ -144,7 +144,10 @@ describe('Resource', function() {
         'https://www.googleapis.com/auth/cloud-platform',
       ]);
       assert.strictEqual(calledWith.projectIdRequired, false);
-      assert.deepStrictEqual(calledWith.packageJson, require('../package.json'));
+      assert.deepStrictEqual(
+        calledWith.packageJson,
+        require('../package.json')
+      );
     });
   });
 
