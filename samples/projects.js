@@ -18,7 +18,7 @@
 function listProjects() {
   // [START resource_list_projects]
   // Imports the Google Cloud client library
-  const Resource = require('@google-cloud/resource');
+  const {Resource} = require('@google-cloud/resource');
 
   // Creates a client
   const resource = new Resource();
