@@ -16,10 +16,12 @@
 'use strict';
 
 const proxyquire = require(`proxyquire`).noPreserveCache();
-const resource = proxyquire(`@google-cloud/resource`, {})();
+const Resource = proxyquire(`@google-cloud/resource`, {}).Resource;
 const sinon = require(`sinon`);
 const test = require(`ava`);
 const tools = require(`@google-cloud/nodejs-repo-tools`);
+
+const resource = new Resource();
 
 test.before(tools.stubConsole);
 test.after.always(tools.restoreConsole);
@@ -29,7 +31,6 @@ test.cb(`should list projects`, t => {
     getProjects: () => {
       return resource.getProjects().then(([projects]) => {
         t.true(Array.isArray(projects));
-
         setTimeout(() => {
           try {
             t.true(console.log.called);
@@ -49,6 +50,8 @@ test.cb(`should list projects`, t => {
   };
 
   proxyquire(`../quickstart`, {
-    '@google-cloud/resource': sinon.stub().returns(resourceMock),
+    '@google-cloud/resource': {
+      Resource: sinon.stub().returns(resourceMock),
+    },
   });
 });
