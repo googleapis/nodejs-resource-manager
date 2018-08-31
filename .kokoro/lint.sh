@@ -15,6 +15,7 @@
 # limitations under the License.
 
 set -xeo pipefail
+export NPM_CONFIG_PREFIX=/home/node/.npm-global
 
 cd $(dirname $0)/..
 
