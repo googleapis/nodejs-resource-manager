@@ -18,17 +18,16 @@
 
 import * as assert from 'assert';
 import * as uuid from 'uuid';
-import { Resource, Project } from '../src';
-import { Operation } from '@google-cloud/common';
+import {Resource, Project} from '../src';
+import {Operation} from '@google-cloud/common';
 
 if (!process.env.GCLOUD_PROJECT ||
-  !process.env.GOOGLE_APPLICATION_CREDENTIALS) {
+    !process.env.GOOGLE_APPLICATION_CREDENTIALS) {
   throw new Error(
-    'the GCLOUD_PROJECT and GOOGLE_APPLICATION_CREDENTIAL environment variables must be set to run the system tests 👻');
+      'the GCLOUD_PROJECT and GOOGLE_APPLICATION_CREDENTIAL environment variables must be set to run the system tests 👻');
 }
 
 describe('Resource', () => {
-
   const PREFIX = 'gcloud-tests-';
   const resource = new Resource();
   const project = resource.project();
@@ -45,12 +44,12 @@ describe('Resource', () => {
     it('should get a list of projects in stream mode', done => {
       let resultsMatched = 0;
       resource.getProjectsStream()
-        .on('error', done)
-        .on('data', () => resultsMatched++)
-        .on('end', () => {
-          assert(resultsMatched > 0);
-          done();
-        });
+          .on('error', done)
+          .on('data', () => resultsMatched++)
+          .on('end', () => {
+            assert(resultsMatched > 0);
+            done();
+          });
     });
   });
 
@@ -78,9 +77,9 @@ describe('Resource', () => {
     before(async () => {
       await deleteTestProjects();
       // TODO(beckwith): The TypeScript types for `create` here aren't correct.
-      // This should return [Project, Operation, Response], but the default signature
-      // for `ServiceObject.create` doesn't match.  The fix is to create an overridden
-      // create method on the `Project` object.
+      // This should return [Project, Operation, Response], but the default
+      // signature for `ServiceObject.create` doesn't match.  The fix is to
+      // create an overridden create method on the `Project` object.
       // https://github.com/googleapis/nodejs-resource/issues/91
       const res = await project.create();
       testProjects.push(res[0] as Project);
@@ -102,19 +101,19 @@ describe('Resource', () => {
     it('should run operation as a promise', done => {
       const project = resource.project(generateName('project'));
       project.create()
-        .then(response => {
-          const operation = response[1] as {} as Operation;
-          return operation.promise();
-        })
-        .then(() => {
-          testProjects.push(project);
-          return project.getMetadata();
-        })
-        .then(response => {
-          const metadata = response[0];
-          assert.strictEqual(metadata.projectId, project.id);
-          done();
-        });
+          .then(response => {
+            const operation = response[1] as {} as Operation;
+            return operation.promise();
+          })
+          .then(() => {
+            testProjects.push(project);
+            return project.getMetadata();
+          })
+          .then(response => {
+            const metadata = response[0];
+            assert.strictEqual(metadata.projectId, project.id);
+            done();
+          });
     });
 
     it('should set metadata', done => {
@@ -123,9 +122,9 @@ describe('Resource', () => {
         assert.ifError(err);
         const originalProjectName = metadata.name;
         assert.notStrictEqual(originalProjectName, newProjectName);
-        project.setMetadata({ name: newProjectName }, err => {
+        project.setMetadata({name: newProjectName}, err => {
           assert.ifError(err);
-          project.setMetadata({ name: originalProjectName }, done);
+          project.setMetadata({name: originalProjectName}, done);
         });
       });
     });
