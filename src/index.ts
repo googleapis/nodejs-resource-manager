@@ -1,3 +1,7 @@
+/**
+ * @module google.cloud.resource
+ */
+
 /*!
  * Copyright 2015 Google Inc. All Rights Reserved.
  *
@@ -24,47 +28,25 @@ import {Project} from './project';
 import * as r from 'request';  // Only for type declarations.
 import {teenyRequest} from 'teeny-request';
 
+/**
+ * Callback function passed to Resource#createProject().
+ */
 export type CreateProjectCallback =
     (err: Error|null, project?: Project|null, operation?: Operation,
-     apiResponse?: r.Response) => void;
+      apiResponse?: r.Response) => void;
+
+/**
+ * Response from invoking Resource#createProject().
+ */
 export type CreateProjectResponse = [Project, Operation, r.Response];
-export type GetProjectsResponse = [Project[], r.Response];
-export type GetProjectsCallback =
-    (err: Error|null, projects?: Project[]|null, nextQuery?: {}|null,
-     apiResponse?: r.Response) => void;
 
-export interface GetProjectOptions {
-  autoPaginate?: boolean;
-  filter?: string;
-  maxApiCalls?: number;
-  maxResults?: number;
-  pageSize?: number;
-  pageToken?: string;
-}
-
-export enum LifecylceState {
-  /**
-   * 	Unspecified state. This is only used/useful for distinguishing unset
-   * values.
-   */
-  'LIFECYCLE_STATE_UNSPECIFIED',
-  /**
-   * 	The normal and active state.
-   */
-  'ACTIVE',
-  /**
-   * 	The project has been marked for deletion by the user (by invoking
-   * projects.delete) or by the system (Google Cloud Platform). This can
-   * generally be reversed by invoking projects.undelete.
-   */
-  'DELETE_REQUESTED',
-  /**
-   * 	This lifecycle state is no longer used and not returned by the API.
-   */
-  'DELETE_IN_PROGRESS',
-}
-
+/**
+ * Configuration options passed to Resource#createProject().
+ */
 export interface CreateProjectOptions {
+  /**
+   * hi
+   */
   projectNumber?: string;
   projectId?: string;
   lifecycleState?: LifecylceState;
@@ -75,33 +57,76 @@ export interface CreateProjectOptions {
 }
 
 /**
- * @typedef {object} ClientConfig
- * @property {string} [projectId] The project ID from the Google Developer's
- *     Console, e.g. 'grape-spaceship-123'. We will also check the environment
- *     variable `GCLOUD_PROJECT` for your project ID. If your app is running in
- *     an environment which supports {@link
- * https://cloud.google.com/docs/authentication/production#providing_credentials_to_your_application
- * Application Default Credentials}, your project ID will be detected
- * automatically.
- * @property {string} [keyFilename] Full path to the a .json, .pem, or .p12 key
- *     downloaded from the Google Developers Console. If you provide a path to a
- *     JSON file, the `projectId` option above is not necessary. NOTE: .pem and
- *     .p12 require you to specify the `email` option as well.
- * @property {string} [email] Account email address. Required when using a .pem
- *     or .p12 keyFilename.
- * @property {object} [credentials] Credentials object.
- * @property {string} [credentials.client_email]
- * @property {string} [credentials.private_key]
- * @property {boolean} [autoRetry=true] Automatically retry requests if the
- *     response is related to rate limits or certain intermittent server errors.
- *     We will exponentially backoff subsequent requests by default.
- * @property {number} [maxRetries=3] Maximum number of automatic retries
- *     attempted before returning the error.
- * @property {Constructor} [promise] Custom promise module to use instead of
- *     native Promises.
+ * Response from invoking Resource#getProjects() without a callback.
+ * @param 0 - A list of projects.
+ * @param 1 - Full API response.
+ */
+export type GetProjectsResponse = [
+  Project[],
+  r.Response
+];
+
+/**
+ * Callback function passed to Resource#getProjects().
+ * @param err - hi
+ * @param projects - the projects
+ */
+export interface GetProjectsCallback {
+  (err: Error|null, projects?: Project[]|null, nextQuery?: object|null, apiResponse?: r.Response): void;
+}
+
+/**
+ * Configuration option passed to Resource#getProject().
+ */
+export interface GetProjectOptions {
+  autoPaginate?: boolean;
+  filter?: string;
+  maxApiCalls?: number;
+  maxResults?: number;
+  pageSize?: number;
+  pageToken?: string;
+}
+
+/**
+ * The state in the lifecycle of the resource.
+ */
+export enum LifecylceState {
+  /**
+   * Unspecified state. This is only used/useful for distinguishing unset
+   * values.
+   */
+  'LIFECYCLE_STATE_UNSPECIFIED',
+  /**
+   * The normal and active state.
+   */
+  'ACTIVE',
+  /**
+   * The project has been marked for deletion by the user (by invoking
+   * projects.delete) or by the system (Google Cloud Platform). This can
+   * generally be reversed by invoking projects.undelete.
+   */
+  'DELETE_REQUESTED',
+  /**
+   * @deprecated This lifecycle state is no longer used and not returned by the API.
+   */
+  'DELETE_IN_PROGRESS',
+}
+
+/**
+ * Configuration options when calling Resource constructor.
  */
 export interface ClientConfig extends GoogleAuthOptions {
+  /**
+   * Automatically retry requests if the
+   * response is related to rate limits or certain intermittent server errors.
+   * We will exponentially backoff subsequent requests by default.
+   * Defaults to true.
+   */
   autoRetry?: boolean;
+  /**
+   * Maximum number of automatic retries attempted before returning the error.
+   * Defaults to 3.
+   */
   maxRetries?: boolean;
 }
 
@@ -116,14 +141,11 @@ export interface ClientConfig extends GoogleAuthOptions {
  *   - Delete projects.
  *   - Recover projects.
  *
- * @class
+ * See [What is the Cloud Resource Manager?]{@link https://cloud.google.com/resource-manager}
  *
- * @see [What is the Cloud Resource Manager?]{@link https://cloud.google.com/resource-manager}
- *
- * @param {ClientConfig} [options] Configuration options.
- *
- * @example <caption>Import the client library</caption>
- * const {Resource} = require('@google-cloud/resource');
+ * @example
+ *  <caption>Import the client library</caption>
+ *  const {Resource} = require('@google-cloud/resource');
  *
  * @example <caption>Create a client that uses <a
  * href="https://cloud.google.com/docs/authentication/production#providing_credentials_to_your_application">Application
@@ -139,8 +161,12 @@ export interface ClientConfig extends GoogleAuthOptions {
  * region_tag:resource_quickstart
  * Full quickstart example:
  */
-class Resource extends Service {
+export class Resource extends Service {
   getProjectsStream: Function;
+
+  /**
+   * @param options - Configuration options for the constructor.
+   */
   constructor(options: ClientConfig = {}) {
     const config = {
       baseUrl: 'https://cloudresourcemanager.googleapis.com/v1',
@@ -155,11 +181,14 @@ class Resource extends Service {
      * Get a list of {@link Resource/project} objects as a readable object
      * stream.
      *
-     * @param {object} query Configuration object. See
+     *
+     * @method Resource#getProjectsStream
+     * @param {object} query - Configuration object. See
      *     {@link Resource#getProjects} for a complete list of options.
      * @return {stream}
      *
      * @example
+     * ```
      * const {Resource} = require('@google-cloud/resource');
      * const resource = new Resource();
      *
@@ -180,6 +209,7 @@ class Resource extends Service {
      *   .on('data', function(project) {
      *     this.end();
      *   });
+     * ``` 
      */
     this.getProjectsStream = paginator.streamify('getProjects');
   }
@@ -190,20 +220,17 @@ class Resource extends Service {
    * **This method only works if you are authenticated as yourself, e.g. using
    * the gcloud SDK.**
    *
-   * @see [Projects Overview]{@link https://cloud.google.com/compute/docs/networking#networks}
-   * @see [projects: create API Documentation]{@link https://cloud.google.com/resource-manager/reference/rest/v1/projects/create}
+   * See [Projects Overview]{@link https://cloud.google.com/compute/docs/networking#networks}
+   * See [projects: create API Documentation]{@link https://cloud.google.com/resource-manager/reference/rest/v1/projects/create}
    *
-   * @param {string} id ID of the project.
-   * @param {object} [options] See a
+   * @param id - ID of the project.
+   * @param options - See a
    *     [Project
    * resource](https://cloud.google.com/resource-manager/reference/rest/v1/projects#Project).
-   * @param {function} [callback] The callback function.
-   * @param {?error} callback.err An error returned while making this request.
-   * @param {Project} callback.project The created Project
-   *     object.
-   * @param {object} callback.apiResponse The full API response.
+   * @param callback - The callback function.
    *
    * @example
+   * ```
    * const {Resource} = require('@google-cloud/resource');
    * const resource = new Resource();
    *
@@ -240,6 +267,7 @@ class Resource extends Service {
    *
    *     // Project created successfully!
    *   });
+   * ```
    */
   createProject(id: string, options?: CreateProjectOptions):
       Promise<CreateProjectResponse>;
@@ -278,23 +306,11 @@ class Resource extends Service {
   /**
    * Get a list of projects.
    *
-   * @see [Projects Overview]{@link https://cloud.google.com/resource-manager/reference/rest/v1/projects}
-   * @see [projects: list API Documentation]{@link https://cloud.google.com/resource-manager/reference/rest/v1/projects/list}
+   * See  [Projects Overview]{@link https://cloud.google.com/resource-manager/reference/rest/v1/projects}
+   * See  [projects: list API Documentation]{@link https://cloud.google.com/resource-manager/reference/rest/v1/projects/list}
    *
-   * @param {object} [options] Operation search options.
-   * @param {boolean} [options.autoPaginate] Have pagination handled
-   *     automatically. Default: true.
-   * @param {string} [options.filter] An expression for filtering the results.
-   * @param {number} [options.maxApiCalls] Maximum number of API calls to make.
-   * @param {number} [options.maxResults] Maximum number of results to return.
-   * @param {number} [options.pageSize] Maximum number of projects to return.
-   * @param {string} [options.pageToken] A previously-returned page token
-   *     representing part of the larger set of results to view.
-   * @param {function} callback The callback function.
-   * @param {?error} callback.err An error returned while making this request.
-   * @param {Project[]} callback.operations Project objects from
-   *     your account.
-   * @param {object} callback.apiResponse The full API response.
+   * @param options - Operation search options.
+   * @param callback - The callback function.
    *
    * @example
    * const {Resource} = require('@google-cloud/resource');
@@ -372,9 +388,9 @@ class Resource extends Service {
   /**
    * Get a reference to an existing operation.
    *
-   * @throws {Error} If a name is not provided.
+   * Throws an error if a name is not provided.
    *
-   * @param {string} name The name of the operation.
+   * @param name - The name of the operation.
    *
    * @example
    * const {Resource} = require('@google-cloud/resource');
@@ -396,8 +412,7 @@ class Resource extends Service {
    *
    * @throws {Error} If an ID is not provided.
    *
-   * @param {string} id The ID of the project (eg: `grape-spaceship-123`).
-   * @return {Project}
+   * @param id The ID of the project (eg: `grape-spaceship-123`).
    *
    * @example
    * const {Resource} = require('@google-cloud/resource');
@@ -433,40 +448,7 @@ promisifyAll(Resource, {
  * {@link Project} class.
  *
  * @name Resource.Project
- * @see Project
+ * See  Project
  * @type {constructor}
  */
 export {Project};
-
-/**
- * The default export of the `@google-cloud/resource` package is the
- * {@link Resource} class.
- *
- * See {@link Resource} and {@link ClientConfig} for client methods and
- * configuration options.
- *
- * @module {constructor} @google-cloud/resource
- * @alias nodejs-resource
- *
- * @example <caption>Install the client library with <a
- * href="https://www.npmjs.com/">npm</a>:</caption> npm install --save
- * @google-cloud/resource
- *
- * @example <caption>Import the client library</caption>
- * const {Resource} = require('@google-cloud/resource');
- *
- * @example <caption>Create a client that uses <a
- * href="https://cloud.google.com/docs/authentication/production#providing_credentials_to_your_application">Application
- * Default Credentials (ADC)</a>:</caption> const resource = new Resource();
- *
- * @example <caption>Create a client with <a
- * href="https://cloud.google.com/docs/authentication/production#obtaining_and_providing_service_account_credentials_manually">explicit
- * credentials</a>:</caption> const resource = new Resource({ projectId:
- * 'your-project-id', keyFilename: '/path/to/keyfile.json'
- * });
- *
- * @example <caption>include:samples/quickstart.js</caption>
- * region_tag:resource_quickstart
- * Full quickstart example:
- */
-export {Resource};
