@@ -16,33 +16,27 @@
 'use strict';
 
 const proxyquire = require(`proxyquire`).noPreserveCache();
-const Resource = proxyquire(`@google-cloud/resource`, {}).Resource;
+const Resource = proxyquire(`@google-cloud/resource`, {});
 const sinon = require(`sinon`);
-const test = require(`ava`);
+const assert = require(`assert`);
 const tools = require(`@google-cloud/nodejs-repo-tools`);
 
 const resource = new Resource();
 
-test.before(tools.stubConsole);
-test.after.always(tools.restoreConsole);
+before(tools.stubConsole);
+after(tools.restoreConsole);
 
-test.cb(`should list projects`, t => {
+it(`should list projects`, () => {
   const resourceMock = {
-    getProjects: () => {
-      return resource.getProjects().then(([projects]) => {
-        t.true(Array.isArray(projects));
-        setTimeout(() => {
-          try {
-            t.true(console.log.called);
-            t.deepEqual(console.log.firstCall.args, [`Projects:`]);
-            projects.forEach((project, i) => {
-              t.deepEqual(console.log.getCall(i + 1).args, [project.id]);
-            });
-            t.end();
-          } catch (err) {
-            t.end(err);
-          }
-        }, 200);
+    getProjects: async () => {
+      return await resource.getProjects().then(async ([projects]) => {
+        assert.ok(Array.isArray(projects));
+        await new Promise(r => setTimeout(r, 200));
+        assert.ok(console.log.called);
+        assert.deepStrictEqual(console.log.firstCall.args, [`Projects:`]);
+        projects.map((project, i) =>
+          assert.deepStrictEqual(console.log.getCall(i + 1).args, [project.id])
+        );
 
         return [projects];
       });

@@ -16,16 +16,16 @@
 'use strict';
 
 const path = require(`path`);
-const test = require(`ava`);
+const assert = require(`assert`);
 const tools = require(`@google-cloud/nodejs-repo-tools`);
 
 const cwd = path.join(__dirname, `..`);
 const cmd = `node projects.js`;
 
-test.before(tools.checkCredentials);
+before(tools.checkCredentials);
 
-test(`should list projects`, async t => {
+it(`should list projects`, async () => {
   const output = await tools.runAsync(`${cmd} list`, cwd);
-  t.true(output.includes(`Projects:`));
-  t.true(output.includes(`${process.env.GCLOUD_PROJECT}`));
+  assert.ok(output.includes(`Projects:`));
+  assert.ok(output.includes(`${process.env.GCLOUD_PROJECT}`));
 });
