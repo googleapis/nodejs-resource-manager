@@ -34,7 +34,7 @@ async function listProjects() {
 async function main() {
   require(`yargs`)
     .demand(1)
-    .command(`list`, `List all current projects.`, {}, await listProjects)
+    .command(`list`, `List all current projects.`, {}, listProjects)
     .example(`node $0 list`, `Lists all current projects.`)
     .wrap(120)
     .recommendCommands()
