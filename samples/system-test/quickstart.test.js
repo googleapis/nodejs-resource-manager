@@ -15,25 +15,25 @@
 
 'use strict';
 
-const proxyquire = require(`proxyquire`).noPreserveCache();
-const Resource = proxyquire(`@google-cloud/resource`, {});
-const sinon = require(`sinon`);
-const assert = require(`assert`);
-const tools = require(`@google-cloud/nodejs-repo-tools`);
+const proxyquire = require('proxyquire').noPreserveCache();
+const Resource = proxyquire('@google-cloud/resource', {});
+const sinon = require('sinon');
+const assert = require('assert');
+const tools = require('@google-cloud/nodejs-repo-tools');
 
 const resource = new Resource();
 
 before(tools.stubConsole);
 after(tools.restoreConsole);
 
-it(`should list projects`, () => {
+it('should list projects', () => {
   const resourceMock = {
     getProjects: async () => {
       return await resource.getProjects().then(async ([projects]) => {
         assert.ok(Array.isArray(projects));
         await new Promise(r => setTimeout(r, 200));
         assert.ok(console.log.called);
-        assert.deepStrictEqual(console.log.firstCall.args, [`Projects:`]);
+        assert.deepStrictEqual(console.log.firstCall.args, ['Projects:']);
         projects.map((project, i) =>
           assert.deepStrictEqual(console.log.getCall(i + 1).args, [project.id])
         );
@@ -43,7 +43,7 @@ it(`should list projects`, () => {
     },
   };
 
-  proxyquire(`../quickstart`, {
+  proxyquire('../quickstart', {
     '@google-cloud/resource': {
       Resource: sinon.stub().returns(resourceMock),
     },
