@@ -75,7 +75,8 @@
     "proxyquire": "^2.0.0",
     "source-map-support": "^0.5.6",
     "typescript": "~3.1.0",
-    "uuid": "^3.0.1"
+    "uuid": "^3.0.1",
+    "@types/sinon": "5.0.5"
   },
   "nyc": {
     "exclude": [
