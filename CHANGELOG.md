@@ -33,7 +33,7 @@ const resource = Resource({...});
 ### Features
 - feat: convert to typescript ([#64](https://github.com/googleapis/nodejs-resource/pull/64))
 
-### Docukentation
+### Documentation
 - docs: update readme badges ([#146](https://github.com/googleapis/nodejs-resource/pull/146))
 - docs(samples): updated samples code to use async await ([#139](https://github.com/googleapis/nodejs-resource/pull/139))
 
