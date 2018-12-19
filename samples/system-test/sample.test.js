@@ -15,17 +15,18 @@
 
 'use strict';
 
-const path = require('path');
-const assert = require('assert');
-const tools = require('@google-cloud/nodejs-repo-tools');
+const {assert} = require('chai');
+const execa = require('execa');
 
-const cwd = path.join(__dirname, '..');
-const cmd = 'node projects.js';
+describe('resource samples', () => {
+  it('should run the quickstart', async () => {
+    const {stdout} = await execa.shell('node projects list');
+    assert.match(stdout, /Projects:/);
+    assert.match(stdout, new RegExp(process.env.GCLOUD_PROJECT));
+  });
 
-before(tools.checkCredentials);
-
-it('should list projects', async () => {
-  const output = await tools.runAsync(`${cmd} list`, cwd);
-  assert.ok(output.includes('Projects:'));
-  assert.ok(output.includes(`${process.env.GCLOUD_PROJECT}`));
+  it('should list projects', async () => {
+    const {stdout} = await execa.shell('node quickstart');
+    assert.match(stdout, /Projects:/);
+  });
 });
