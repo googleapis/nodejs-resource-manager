@@ -16,17 +16,17 @@
 'use strict';
 
 const {assert} = require('chai');
-const execa = require('execa');
+const {execSync} = require('child_process');
 
 describe('resource samples', () => {
   it('should run the quickstart', async () => {
-    const {stdout} = await execa.shell('node projects list');
+    const stdout = execSync('node projects list');
     assert.match(stdout, /Projects:/);
     assert.match(stdout, new RegExp(process.env.GCLOUD_PROJECT));
   });
 
   it('should list projects', async () => {
-    const {stdout} = await execa.shell('node quickstart');
+    const stdout = execSync('node quickstart');
     assert.match(stdout, /Projects:/);
   });
 });
