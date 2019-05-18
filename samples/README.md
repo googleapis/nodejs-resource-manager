@@ -6,6 +6,9 @@
 
 [![Open in Cloud Shell][shell_img]][shell_link]
 
+
+> Node.js idiomatic client for [Cloud Resource Manager API][product-docs].
+
 Google Cloud Platform provides container resources such as Organizations
 and Projects, that allow you to group and hierarchically organize other
 Cloud Platform resources. This hierarchical organization lets you easily
