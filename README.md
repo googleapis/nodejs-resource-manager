@@ -11,7 +11,12 @@
 
 
 
-Cloud Resource Manager Client Library for Node.js
+Google Cloud Platform provides container resources such as Organizations
+and Projects, that allow you to group and hierarchically organize other
+Cloud Platform resources. This hierarchical organization lets you easily
+manage common aspects of your resources such as access control and
+configuration settings. The [Cloud Resource Manager API](https://cloud.google.com/resource-manager/docs/)
+enables you to programmatically manage these container resources.
 
 
 * [Google Cloud Resource Manager API Node.js Client API Reference][client-docs]
