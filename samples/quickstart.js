@@ -20,18 +20,17 @@ async function main() {
   // Imports the Google Cloud client library
   const {Resource} = require('@google-cloud/resource');
 
-  // Your Google Cloud Platform project ID
-  const projectId = process.env.GCLOUD_PROJECT || 'YOUR_PROJECT_ID';
-
   // Creates a client
-  const resource = new Resource({projectId});
+  const resource = new Resource();
 
-  // Lists current projects
-  const [projects] = await resource.getProjects();
+  async function quickstart() {
+    // Lists current projects
+    const [projects] = await resource.getProjects();
 
-  console.log('Projects:');
-  projects.forEach(project => console.log(project.id));
-
+    console.log('Projects:');
+    projects.forEach(project => console.log(project.id));
+  }
+  quickstart();
   // [END resource_quickstart]
 }
 
