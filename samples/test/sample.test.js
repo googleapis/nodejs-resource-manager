@@ -16,19 +16,19 @@
 'use strict';
 
 const {assert} = require('chai');
-const cp = require('child_process');
+const {execSync} = require('child_process');
 
-const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
+const exec = cmd => execSync(cmd, {encoding: 'utf-8'});
 
 describe('resource samples', () => {
-  it('should run the quickstart', async () => {
-    const stdout = execSync('node projects list');
-    assert.match(stdout, /Projects:/);
-    assert.match(stdout, new RegExp(process.env.GCLOUD_PROJECT));
+  it('should run the quickstart', () => {
+    const stdout = exec('node listProjects');
+    assert.include(stdout, 'Projects:');
+    assert.include(stdout, process.env.GCLOUD_PROJECT);
   });
 
-  it('should list projects', async () => {
-    const stdout = execSync('node quickstart');
+  it('should list projects', () => {
+    const stdout = exec('node quickstart');
     assert.match(stdout, /Projects:/);
   });
 });
