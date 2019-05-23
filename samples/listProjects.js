@@ -15,7 +15,12 @@
 
 'use strict';
 
-async function listProjects() {
+// sample-metadata:
+//   title: List Projects
+//   description: List all current projects.
+//   usage: node listProjects.js
+
+async function main() {
   // [START resource_list_projects]
   // Imports the Google Cloud client library
   const {Resource} = require('@google-cloud/resource');
@@ -23,26 +28,14 @@ async function listProjects() {
   // Creates a client
   const resource = new Resource();
 
-  // Lists all current projects
-  const [projects] = await resource.getProjects();
-  console.log('Projects:');
-  projects.forEach(project => console.log(project.id));
-
+  async function listProjects() {
+    // Lists all current projects
+    const [projects] = await resource.getProjects();
+    console.log('Projects:');
+    projects.forEach(project => console.log(project.id));
+  }
+  listProjects();
   // [END resource_list_projects]
-}
-
-async function main() {
-  require(`yargs`)
-    .demand(1)
-    .command(`list`, `List all current projects.`, {}, listProjects)
-    .example(`node $0 list`, `Lists all current projects.`)
-    .wrap(120)
-    .recommendCommands()
-    .epilogue(
-      `For more information, see https://cloud.google.com/resource-manager/docs`
-    )
-    .help()
-    .strict().argv;
 }
 
 main().catch(console.error);
