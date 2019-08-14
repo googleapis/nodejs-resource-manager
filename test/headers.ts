@@ -15,34 +15,54 @@
  */
 
 import * as assert from 'assert';
-import * as nock from 'nock';
+import * as proxyquire from 'proxyquire';
 
-const {Resource} = require('../../');
+const error = Error('not implemented');
+
+interface Request {
+  headers: {
+    [key: string]: string;
+  };
+}
 
 describe('headers', () => {
-  before(() => {
-    nock.disableNetConnect();
+  const requests: Request[] = [];
+  const {Resource} = proxyquire('../../', {
+    'google-auth-library': {
+      GoogleAuth: class {
+        async getProjectId() {
+          return 'foo-project';
+        }
+        async getClient() {
+          return class {
+            async request() {
+              return {};
+            }
+          };
+        }
+        getCredentials() {
+          return {};
+        }
+        async authorizeRequest(req: Request) {
+          requests.push(req);
+          throw error;
+        }
+      },
+      '@global': true,
+    },
   });
+
   it('populates x-goog-api-client header', async () => {
     const resource = new Resource();
-    const metadata = nock('http://metadata.google.internal.')
-      .get('/computeMetadata/v1/instance')
-      .replyWithError({code: 'ENOTFOUND'});
-    const req = nock('https://cloudresourcemanager.googleapis.com')
-      .get('/v1/projects?')
-      .reply(200, function() {
-        assert.ok(
-          /^gl-node\/[0-9]+\.[0-9]+\.[-.\w]+ gccl\/[0-9]+\.[0-9]+\.[-.\w]+$/.test(
-            this.req.headers['x-goog-api-client'][0]
-          )
-        );
-        return {};
-      });
-    const [projects] = await resource.getProjects();
-    metadata.done();
-    req.done();
-  });
-  after(() => {
-    nock.enableNetConnect();
+    try {
+      const [projects] = await resource.getProjects();
+    } catch (err) {
+      if (err !== error) throw err;
+    }
+    assert.ok(
+      /^gl-node\/[0-9]+\.[0-9]+\.[-.\w]+ gccl\/[0-9]+\.[0-9]+\.[-.\w]+$/.test(
+        requests[0].headers['x-goog-api-client']
+      )
+    );
   });
 });

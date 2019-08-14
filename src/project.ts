@@ -34,17 +34,6 @@ export interface ProjectCreateCallback {
     apiResponse?: Metadata
   ): void;
 }
-type METHOD_TYPE =
-  | 'GET'
-  | 'HEAD'
-  | 'POST'
-  | 'DELETE'
-  | 'PUT'
-  | 'CONNECT'
-  | 'OPTIONS'
-  | 'TRACE'
-  | 'PATCH'
-  | undefined;
 
 /**
  * A Project object allows you to interact with a Google Cloud Platform project.
@@ -273,7 +262,7 @@ class Project extends ServiceObject {
        */
       setMetadata: {
         reqOpts: {
-          method: 'PUT' as METHOD_TYPE,
+          method: 'PUT'
         },
       },
     };
