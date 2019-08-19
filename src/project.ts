@@ -262,7 +262,7 @@ class Project extends ServiceObject {
        */
       setMetadata: {
         reqOpts: {
-          method: 'PUT'
+          method: 'PUT',
         },
       },
     };
