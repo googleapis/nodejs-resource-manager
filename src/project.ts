@@ -35,6 +35,38 @@ export interface ProjectCreateCallback {
   ): void;
 }
 
+export interface Expression {
+  expression: string;
+  title: string;
+  description: string;
+  location: string;
+}
+export interface Binding {
+  role: string;
+  members: string[];
+  condition: Expression;
+}
+export interface AuditLogConfig {
+  logType: string;
+  exemptedMembers: string[];
+}
+export interface AuditConfig {
+  service: string;
+  auditLogConfigs: AuditLogConfig[];
+}
+
+export interface Policy {
+  bindings: Binding[];
+  auditConfigs: AuditConfig[];
+  etag: string;
+  version: number;
+}
+
+export type GetIamPolicyResponse = [Policy];
+export interface GetIamPolicyCallback {
+  (err: Error | null, policy?: Policy): void;
+}
+
 /**
  * A Project object allows you to interact with a Google Cloud Platform project.
  *
@@ -288,6 +320,8 @@ class Project extends ServiceObject {
     super.create(callback);
   }
 
+  restore(): Promise<RestoreResponse>;
+  restore(callback: RestoreCallback): void;
   /**
    * Restore a project.
    *
@@ -318,14 +352,64 @@ class Project extends ServiceObject {
    *   const apiResponse = data[0];
    * });
    */
-  restore(): Promise<RestoreResponse>;
-  restore(callback: RestoreCallback): void;
   restore(callback?: RestoreCallback): void | Promise<RestoreResponse> {
     callback = callback || util.noop;
     this.request(
       {
         method: 'POST',
         uri: ':undelete',
+      },
+      (err, resp) => {
+        callback!(err, resp);
+      }
+    );
+  }
+
+  getIamPolicy(): Promise<GetIamPolicyResponse>;
+  getIamPolicy(callback: GetIamPolicyCallback): void;
+  /**
+   * @typedef {array} GetIamPolicyResponse
+   * @property {Policy} 0 The new [policy]{@link https://cloud.google.com/resource-manager/reference/rest/Shared.Types/Policy}.
+   */
+  /**
+   * @callback GetIamPolicyCallback
+   * @param {?Error} err Request error, if any.
+   * @param {Policy} policy The new [policy]{@link https://cloud.google.com/resource-manager/reference/rest/Shared.Types/Policy}.
+   */
+  /**
+   * Get Iam Policy for Project.
+   *
+   * @see [projects: getIamPolicy API Documentation]{@link https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy}
+   *
+   * @param {GetIamPolicyCallback} [callback] Callback function.
+   * @returns {Promise<GetIamPolicyResponse>}
+   *
+   * @example
+   * const {Resource} = require('@google-cloud/resource');
+   * const resource = new Resource();
+   * const project = resource.project('grape-spaceship-123');
+   *
+   * project.getIamPolicy((err, policy) => {
+   *   if (!err) {
+   *     // console.log(policy).
+   *   }
+   * });
+   *
+   * //-
+   * // If the callback is omitted, we'll return a Promise.
+   * //-
+   * project.getIamPolicy().then((data) => {
+   *   const policy = data[0];
+   * });
+   */
+  getIamPolicy(
+    callback?: GetIamPolicyCallback
+  ): void | Promise<GetIamPolicyResponse> {
+    callback = callback || util.noop;
+    this.request(
+      {
+        method: 'POST',
+        uri: ':getIamPolicy',
       },
       (err, resp) => {
         callback!(err, resp);
