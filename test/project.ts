@@ -107,43 +107,6 @@ describe('Project', () => {
     });
   });
 
-  describe('restore', () => {
-    const error = new Error('Error.');
-    const apiResponse = {a: 'b', c: 'd'};
-
-    beforeEach(() => {
-      project.request = (
-        reqOpts: DecorateRequestOptions,
-        callback: Function
-      ) => {
-        callback(error, apiResponse);
-      };
-    });
-
-    it('should make the correct API request', done => {
-      project.request = (reqOpts: DecorateRequestOptions) => {
-        assert.strictEqual(reqOpts.method, 'POST');
-        assert.strictEqual(reqOpts.uri, ':undelete');
-        done();
-      };
-      project.restore(assert.ifError);
-    });
-
-    it('should execute the callback with error & API response', done => {
-      project.restore((err: Error, apiResponse_: Metadata) => {
-        assert.strictEqual(err, error);
-        assert.strictEqual(apiResponse_, apiResponse);
-        done();
-      });
-    });
-
-    it('should not require a callback', () => {
-      assert.doesNotThrow(() => {
-        project.restore();
-      });
-    });
-  });
-
   describe('getIamPolicy', () => {
     const error = new Error('Error.');
     const policy = {
@@ -196,6 +159,43 @@ describe('Project', () => {
     it('should not require a callback', () => {
       assert.doesNotThrow(() => {
         project.getIamPolicy();
+      });
+    });
+  });
+
+  describe('restore', () => {
+    const error = new Error('Error.');
+    const apiResponse = {a: 'b', c: 'd'};
+
+    beforeEach(() => {
+      project.request = (
+        reqOpts: DecorateRequestOptions,
+        callback: Function
+      ) => {
+        callback(error, apiResponse);
+      };
+    });
+
+    it('should make the correct API request', done => {
+      project.request = (reqOpts: DecorateRequestOptions) => {
+        assert.strictEqual(reqOpts.method, 'POST');
+        assert.strictEqual(reqOpts.uri, ':undelete');
+        done();
+      };
+      project.restore(assert.ifError);
+    });
+
+    it('should execute the callback with error & API response', done => {
+      project.restore((err: Error, apiResponse_: Metadata) => {
+        assert.strictEqual(err, error);
+        assert.strictEqual(apiResponse_, apiResponse);
+        done();
+      });
+    });
+
+    it('should not require a callback', () => {
+      assert.doesNotThrow(() => {
+        project.restore();
       });
     });
   });

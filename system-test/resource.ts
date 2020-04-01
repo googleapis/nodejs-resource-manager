@@ -62,7 +62,7 @@ describe('Resource', () => {
       project.getIamPolicy((err, policy) => {
         assert.ifError(err);
         assert.notStrictEqual(policy!.etag, undefined);
-        assert.equal(typeof policy!.version, 'number');
+        assert.strictEqual(typeof policy!.version, 'number');
         done();
       });
     });
