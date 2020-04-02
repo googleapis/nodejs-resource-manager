@@ -155,12 +155,6 @@ describe('Project', () => {
         done();
       });
     });
-
-    it('should not require a callback', () => {
-      assert.doesNotThrow(() => {
-        project.getIamPolicy();
-      });
-    });
   });
 
   describe('restore', () => {

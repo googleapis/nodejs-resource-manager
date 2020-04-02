@@ -373,7 +373,7 @@ class Project extends ServiceObject {
       typeof optionsOrCallback === 'object' ? optionsOrCallback : {};
     callback =
       typeof optionsOrCallback === 'function' ? optionsOrCallback : callback;
-    callback = callback || util.noop;
+
     this.request(
       {
         method: 'POST',
