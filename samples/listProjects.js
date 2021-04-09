@@ -22,14 +22,14 @@
 async function main() {
   // [START resource_list_projects]
   // Imports the Google Cloud client library
-  const {Resource} = require('@google-cloud/resource');
+  const {ProjectsClient} = require('@google-cloud/resource');
 
   // Creates a client
-  const resource = new Resource();
+  const projectsClient = new ProjectsClient();
 
   async function listProjects() {
     // Lists all current projects
-    const [projects] = await resource.getProjects();
+    const [projects] = await projectsClient.listProjects();
     console.log('Projects:');
     projects.forEach(project => console.log(project.id));
   }
@@ -37,4 +37,8 @@ async function main() {
   // [END resource_list_projects]
 }
 
-main().catch(console.error);
+process.on('unhandledRejection', err => {
+  console.error(err.message);
+  process.exitCode = 1;
+});
+main(...process.argv.slice(2));
