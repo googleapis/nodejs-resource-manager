@@ -23,7 +23,7 @@ import {
   TagBindingsClient,
   TagKeysClient,
   TagValuesClient,
-} from '@google-cloud/resourcemanager';
+} from '@google-cloud/resource';
 
 // check that the client class type name can be used
 function doStuffWithFoldersClient(client: FoldersClient) {
