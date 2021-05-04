@@ -5,8 +5,8 @@
 # [Google Cloud Resource Manager API: Node.js Client](https://github.com/googleapis/nodejs-resource)
 
 [![release level](https://img.shields.io/badge/release%20level-alpha-orange.svg?style=flat)](https://cloud.google.com/terms/launch-stages)
-[![npm version](https://img.shields.io/npm/v/@google-cloud/resource-manager.svg)](https://www.npmjs.org/package/@google-cloud/resource-manager)
-[![codecov](https://img.shields.io/codecov/c/github/googleapis/nodejs-resource-manager/master.svg?style=flat)](https://codecov.io/gh/googleapis/nodejs-resource)
+[![npm version](https://img.shields.io/npm/v/@google-cloud/resource-manager.svg)](https://www.npmjs.org/package/@google-cloud/resource)
+[![codecov](https://img.shields.io/codecov/c/github/googleapis/nodejs-resource/master.svg?style=flat)](https://codecov.io/gh/googleapis/nodejs-resource)
 
 
 ### **_IMPORTANT NOTE_**
@@ -60,7 +60,7 @@ Google APIs Client Libraries, in [Client Libraries Explained][explained].
 ### Installing the client library
 
 ```bash
-npm install @google-cloud/resource-manager
+npm install @google-cloud/resource
 ```
 
 
@@ -68,7 +68,7 @@ npm install @google-cloud/resource-manager
 
 ```javascript
 // Imports the Google Cloud client library
-const {Resource} = require('@google-cloud/resource-manager');
+const {Resource} = require('@google-cloud/resource');
 
 // Creates a client
 const resource = new Resource();
