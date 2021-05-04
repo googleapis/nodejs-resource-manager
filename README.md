@@ -10,7 +10,7 @@
 
 
 ### **_IMPORTANT NOTE_**
-**Version 3.0.0 renames `@google-cloud/resource` to `@google-cloud/resource-manager` on npm.**
+**Version 2.0.0 renames `@google-cloud/resource` to `@google-cloud/resource-manager` on npm.**
 
 
 > Node.js idiomatic client for [Cloud Resource Manager API][product-docs].
