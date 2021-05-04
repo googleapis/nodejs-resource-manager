@@ -5,7 +5,7 @@
 # [Google Cloud Resource Manager API: Node.js Client](https://github.com/googleapis/nodejs-resource)
 
 [![release level](https://img.shields.io/badge/release%20level-alpha-orange.svg?style=flat)](https://cloud.google.com/terms/launch-stages)
-[![npm version](https://img.shields.io/npm/v/@google-cloud/resource-manager.svg)](https://www.npmjs.org/package/@google-cloud/resource)
+[![npm version](https://img.shields.io/npm/v/@google-cloud/resource.svg)](https://www.npmjs.org/package/@google-cloud/resource)
 [![codecov](https://img.shields.io/codecov/c/github/googleapis/nodejs-resource/master.svg?style=flat)](https://codecov.io/gh/googleapis/nodejs-resource)
 
 
