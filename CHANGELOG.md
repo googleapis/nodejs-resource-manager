@@ -16,17 +16,17 @@
 
 ### Features
 
-* Expose getIamPolicy support for project ([#302](https://www.github.com/googleapis/nodejs-resource/issues/302)) ([85f136d](https://www.github.com/googleapis/nodejs-resource/commit/85f136dfe133e42976864082cfe444a3f0cea37c))
+* Expose getIamPolicy support for project ([#302](https://www.github.com/googleapis/nodejs-resource/issues/302)) ([85f136d](https://www.github.com/googleapis/nodejs-resource-manager/commit/85f136dfe133e42976864082cfe444a3f0cea37c))
 
 
 ### Bug Fixes
 
-* apache license URL ([#468](https://www.github.com/googleapis/nodejs-resource/issues/468)) ([#308](https://www.github.com/googleapis/nodejs-resource/issues/308)) ([3fdebd3](https://www.github.com/googleapis/nodejs-resource/commit/3fdebd3b5f57d11dc77b8a6755d25d9be3da4794))
-* **deps:** update dependency @google-cloud/common to v3 ([#301](https://www.github.com/googleapis/nodejs-resource/issues/301)) ([0ee3bf1](https://www.github.com/googleapis/nodejs-resource/commit/0ee3bf19810f38c4aa2a4e1b389022bc32bc70bc))
-* **deps:** update dependency @google-cloud/paginator to v3 ([#299](https://www.github.com/googleapis/nodejs-resource/issues/299)) ([3cffb9f](https://www.github.com/googleapis/nodejs-resource/commit/3cffb9ffbdeaabd77522f17af9b5f25eb11a9009))
-* **deps:** update dependency @google-cloud/promisify to v2 ([#298](https://www.github.com/googleapis/nodejs-resource/issues/298)) ([1e8965f](https://www.github.com/googleapis/nodejs-resource/commit/1e8965f204195d7d0014691dad6eb7d2efb632b9))
+* apache license URL ([#468](https://www.github.com/googleapis/-manager/issues/468)) ([#308](https://www.github.com/googleapis/nodejs-resource-manager/issues/308)) ([3fdebd3](https://www.github.com/googleapis/nodejs-resource-manager/commit/3fdebd3b5f57d11dc77b8a6755d25d9be3da4794))
+* **deps:** update dependency @google-cloud/common to v3 ([#301](https://www.github.com/googleapis/nodejs-resource-manager/issues/301)) ([0ee3bf1](https://www.github.com/googleapis/nodejs-resource-manager/commit/0ee3bf19810f38c4aa2a4e1b389022bc32bc70bc))
+* **deps:** update dependency @google-cloud/paginator to v3 ([#299](https://www.github.com/googleapis/nodejs-resource-manager/issues/299)) ([3cffb9f](https://www.github.com/googleapis/nodejs-resource-manager/commit/3cffb9ffbdeaabd77522f17af9b5f25eb11a9009))
+* **deps:** update dependency @google-cloud/promisify to v2 ([#298](https://www.github.com/googleapis/nodejs-resource-manager/issues/298)) ([1e8965f](https://www.github.com/googleapis/nodejs-resource-manager/commit/1e8965f204195d7d0014691dad6eb7d2efb632b9))
 
-### [1.1.5](https://www.github.com/googleapis/nodejs-resource/compare/v1.1.4...v1.1.5) (2019-12-05)
+### [1.1.5](https://www.github.com/googleapis/nodejs-resource-manager/compare/v1.1.4...v1.1.5) (2019-12-05)
 
 
 ### Bug Fixes
