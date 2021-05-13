@@ -9,10 +9,6 @@
 [![codecov](https://img.shields.io/codecov/c/github/googleapis/nodejs-resource/master.svg?style=flat)](https://codecov.io/gh/googleapis/nodejs-resource)
 
 
-### **_IMPORTANT NOTE_**
-**Version 2.0.0 renames `@google-cloud/resource` to `@google-cloud/resource-manager` on npm.**
-
-
 > Node.js idiomatic client for [Cloud Resource Manager API][product-docs].
 
 Google Cloud Platform provides container resources such as Organizations
