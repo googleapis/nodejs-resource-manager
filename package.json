@@ -7,7 +7,7 @@
   "engines": {
     "node": ">=10"
   },
-  "repository": "googleapis/nodejs-resource-manager,
+  "repository": "googleapis/nodejs-resource-manager",
   "main": "./build/src/index.js",
   "types": "./build/src/index.d.ts",
   "files": [
