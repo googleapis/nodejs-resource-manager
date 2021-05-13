@@ -31,65 +31,65 @@
 
 ### Bug Fixes
 
-* **deps:** pin TypeScript below 3.7.0 ([6e6c60d](https://www.github.com/googleapis/nodejs-resource/commit/6e6c60d196bea624efd983be4b7fe3b41aa77c2f))
+* **deps:** pin TypeScript below 3.7.0 ([6e6c60d](https://www.github.com/googleapis/nodejs-resource-manager/commit/6e6c60d196bea624efd983be4b7fe3b41aa77c2f))
 
-### [1.1.4](https://www.github.com/googleapis/nodejs-resource/compare/v1.1.3...v1.1.4) (2019-11-14)
-
-
-### Bug Fixes
-
-* **docs:** snippets are now replaced in jsdoc comments ([#258](https://www.github.com/googleapis/nodejs-resource/issues/258)) ([d81b8ae](https://www.github.com/googleapis/nodejs-resource/commit/d81b8aecd58bfcb167463b9c69acd54184efae70))
-
-### [1.1.3](https://www.github.com/googleapis/nodejs-resource/compare/v1.1.2...v1.1.3) (2019-07-26)
+### [1.1.4](https://www.github.com/googleapis/nodejs-resource-manager/compare/v1.1.3...v1.1.4) (2019-11-14)
 
 
 ### Bug Fixes
 
-* **deps:** update dependency @google-cloud/paginator to v2 ([#238](https://www.github.com/googleapis/nodejs-resource/issues/238)) ([42c35d2](https://www.github.com/googleapis/nodejs-resource/commit/42c35d2))
+* **docs:** snippets are now replaced in jsdoc comments ([#258](https://www.github.com/googleapis/nodejs-resource-manager/issues/258)) ([d81b8ae](https://www.github.com/googleapis/nodejs-resource/commit/d81b8aecd58bfcb167463b9c69acd54184efae70))
 
-### [1.1.2](https://www.github.com/googleapis/nodejs-resource/compare/v1.1.1...v1.1.2) (2019-06-26)
-
-
-### Bug Fixes
-
-* **docs:** link to reference docs section on googleapis.dev ([#234](https://www.github.com/googleapis/nodejs-resource/issues/234)) ([342c506](https://www.github.com/googleapis/nodejs-resource/commit/342c506))
-
-### [1.1.1](https://www.github.com/googleapis/nodejs-resource/compare/v1.1.0...v1.1.1) (2019-06-15)
+### [1.1.3](https://www.github.com/googleapis/nodejs-resource-manager/compare/v1.1.2...v1.1.3) (2019-07-26)
 
 
 ### Bug Fixes
 
-* **docs:** move to new client docs URL ([#231](https://www.github.com/googleapis/nodejs-resource/issues/231)) ([4e08223](https://www.github.com/googleapis/nodejs-resource/commit/4e08223))
+* **deps:** update dependency @google-cloud/paginator to v2 ([#238](https://www.github.com/googleapis/nodejs-resource-manager/issues/238)) ([42c35d2](https://www.github.com/googleapis/nodejs-resource-manager/commit/42c35d2))
 
-## [1.1.0](https://www.github.com/googleapis/nodejs-resource/compare/v1.0.1...v1.1.0) (2019-06-05)
+### [1.1.2](https://www.github.com/googleapis/nodejs-resource-manager/compare/v1.1.1...v1.1.2) (2019-06-26)
+
+
+### Bug Fixes
+
+* **docs:** link to reference docs section on googleapis.dev ([#234](https://www.github.com/googleapis/nodejs-resource-manager/issues/234)) ([342c506](https://www.github.com/googleapis/nodejs-resource/commit/342c506))
+
+### [1.1.1](https://www.github.com/googleapis/nodejs-resource-manager/compare/v1.1.0...v1.1.1) (2019-06-15)
+
+
+### Bug Fixes
+
+* **docs:** move to new client docs URL ([#231](https://www.github.com/googleapis/nodejs-resource-manager/issues/231)) ([4e08223](https://www.github.com/googleapis/nodejs-resource-manager/commit/4e08223))
+
+## [1.1.0](https://www.github.com/googleapis/nodejs-resource-manager/compare/v1.0.1...v1.1.0) (2019-06-05)
 
 
 ### Features
 
-* support apiEndpoint override ([#229](https://www.github.com/googleapis/nodejs-resource/issues/229)) ([f90f4b4](https://www.github.com/googleapis/nodejs-resource/commit/f90f4b4))
+* support apiEndpoint override ([#229](https://www.github.com/googleapis/nodejs-resource-manager/issues/229)) ([f90f4b4](https://www.github.com/googleapis/nodejs-resource-manager/commit/f90f4b4))
 
-### [1.0.1](https://www.github.com/googleapis/nodejs-resource/compare/v1.0.0...v1.0.1) (2019-05-24)
+### [1.0.1](https://www.github.com/googleapis/nodejs-resource-manager/compare/v1.0.0...v1.0.1) (2019-05-24)
 
 
 ### Bug Fixes
 
-* **types:** use Metadata for api response type ([#222](https://www.github.com/googleapis/nodejs-resource/issues/222)) ([2032590](https://www.github.com/googleapis/nodejs-resource/commit/2032590))
+* **types:** use Metadata for api response type ([#222](https://www.github.com/googleapis/nodejs-resource-manager/issues/222)) ([2032590](https://www.github.com/googleapis/nodejs-resource-manager/commit/2032590))
 
 ## [1.0.0](https://www.github.com/googleapis/nodejs-resource/compare/v0.9.1...v1.0.0) (2019-05-14)
 
 
 ### Bug Fixes
 
-* **deps:** remove teeny-request as dependency ([#199](https://www.github.com/googleapis/nodejs-resource/issues/199)) ([385b400](https://www.github.com/googleapis/nodejs-resource/commit/385b400))
-* **deps:** update dependency @google-cloud/common to ^0.32.0 ([4707eb9](https://www.github.com/googleapis/nodejs-resource/commit/4707eb9)), closes [#8203](https://www.github.com/googleapis/nodejs-resource/issues/8203)
-* **deps:** update dependency @google-cloud/common to v1 ([#215](https://www.github.com/googleapis/nodejs-resource/issues/215)) ([ab7cb12](https://www.github.com/googleapis/nodejs-resource/commit/ab7cb12))
-* **deps:** update dependency @google-cloud/paginator to v1 ([#209](https://www.github.com/googleapis/nodejs-resource/issues/209)) ([14b6523](https://www.github.com/googleapis/nodejs-resource/commit/14b6523))
-* **deps:** update dependency @google-cloud/promisify to v1 ([#208](https://www.github.com/googleapis/nodejs-resource/issues/208)) ([3a71dcb](https://www.github.com/googleapis/nodejs-resource/commit/3a71dcb))
+* **deps:** remove teeny-request as dependency ([#199](https://www.github.com/googleapis/nodejs-resource-manager/issues/199)) ([385b400](https://www.github.com/googleapis/nodejs-resource-manager/commit/385b400))
+* **deps:** update dependency @google-cloud/common to ^0.32.0 ([4707eb9](https://www.github.com/googleapis/nodejs-resource-manager/commit/4707eb9)), closes [#8203](https://www.github.com/googleapis/nodejs-resource-manager/issues/8203)
+* **deps:** update dependency @google-cloud/common to v1 ([#215](https://www.github.com/googleapis/nodejs-resource-manager/issues/215)) ([ab7cb12](https://www.github.com/googleapis/nodejs-resource-manager/commit/ab7cb12))
+* **deps:** update dependency @google-cloud/paginator to v1 ([#209](https://www.github.com/googleapis/nodejs-resource-manager/issues/209)) ([14b6523](https://www.github.com/googleapis/nodejs-resource-manager/commit/14b6523))
+* **deps:** update dependency @google-cloud/promisify to v1 ([#208](https://www.github.com/googleapis/nodejs-resource-manager/issues/208)) ([3a71dcb](https://www.github.com/googleapis/nodejs-resource-manager/commit/3a71dcb))
 
 
 ### Build System
 
-* upgrade engines field to >=8.10.0 ([#204](https://www.github.com/googleapis/nodejs-resource/issues/204)) ([57b27fd](https://www.github.com/googleapis/nodejs-resource/commit/57b27fd))
+* upgrade engines field to >=8.10.0 ([#204](https://www.github.com/googleapis/nodejs-resource-manager/issues/204)) ([57b27fd](https://www.github.com/googleapis/nodejs-resource-manager/commit/57b27fd))
 
 
 ### BREAKING CHANGES
