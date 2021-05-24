@@ -2,11 +2,11 @@
 [//]: # "To regenerate it, use `python -m synthtool`."
 <img src="https://avatars2.githubusercontent.com/u/2810941?v=3&s=96" alt="Google Cloud Platform logo" title="Google Cloud Platform" align="right" height="96" width="96"/>
 
-# [Google Cloud Resource Manager API: Node.js Client](https://github.com/googleapis/resource-manager)
+# [Google Cloud Resource Manager API: Node.js Client](https://github.com/googleapis/nodejs-resource-manager)
 
 [![release level](https://img.shields.io/badge/release%20level-alpha-orange.svg?style=flat)](https://cloud.google.com/terms/launch-stages)
-[![npm version](https://img.shields.io/npm/v/@google-cloud/resource-manager.svg)](https://www.npmjs.org/package/@google-cloud/resource-manager)
-[![codecov](https://img.shields.io/codecov/c/github/googleapis/resource-manager/master.svg?style=flat)](https://codecov.io/gh/googleapis/resource-manager)
+[![npm version](https://img.shields.io/npm/v/@google-cloud/nodejs-resource-manager.svg)](https://www.npmjs.org/package/@google-cloud/nodejs-resource-manager)
+[![codecov](https://img.shields.io/codecov/c/github/googleapis/nodejs-resource-manager/master.svg?style=flat)](https://codecov.io/gh/googleapis/nodejs-resource-manager)
 
 
 
@@ -18,7 +18,7 @@ Google Cloud Platform provides container resources such as Organizations
 and Projects, that allow you to group and hierarchically organize other
 Cloud Platform resources. This hierarchical organization lets you easily
 manage common aspects of your resources such as access control and
-configuration settings. The [Cloud Resource Manager API](https://cloud.google.com/resource-manager/docs/)
+configuration settings. The [Cloud Resource Manager API](https://cloud.google.com/nodejs-resource-manager/docs/)
 enables you to programmatically manage these container resources.
 
 ### **_IMPORTANT NOTE_**
@@ -26,11 +26,11 @@ enables you to programmatically manage these container resources.
 
 
 A comprehensive list of changes in each version may be found in
-[the CHANGELOG](https://github.com/googleapis/resource-manager/blob/master/CHANGELOG.md).
+[the CHANGELOG](https://github.com/googleapis/nodejs-resource-manager/blob/master/CHANGELOG.md).
 
 * [Google Cloud Resource Manager API Node.js Client API Reference][client-docs]
 * [Google Cloud Resource Manager API Documentation][product-docs]
-* [github.com/googleapis/resource-manager](https://github.com/googleapis/resource-manager)
+* [github.com/googleapis/nodejs-resource-manager](https://github.com/googleapis/nodejs-resource-manager)
 
 Read more about the client libraries for Cloud APIs, including the older
 Google APIs Client Libraries, in [Client Libraries Explained][explained].
@@ -90,12 +90,12 @@ quickstart();
 
 ## Samples
 
-Samples are in the [`samples/`](https://github.com/googleapis/resource-manager/tree/master/samples) directory. Each sample's `README.md` has instructions for running its sample.
+Samples are in the [`samples/`](https://github.com/googleapis/nodejs-resource-manager/tree/master/samples) directory. Each sample's `README.md` has instructions for running its sample.
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
-| List Projects | [source code](https://github.com/googleapis/resource-manager/blob/master/samples/listProjects.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/resource-manager&page=editor&open_in_editor=samples/listProjects.js,samples/README.md) |
-| Quickstart | [source code](https://github.com/googleapis/resource-manager/blob/master/samples/quickstart.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/resource-manager&page=editor&open_in_editor=samples/quickstart.js,samples/README.md) |
+| List Projects | [source code](https://github.com/googleapis/nodejs-resource-manager/blob/master/samples/listProjects.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-resource-manager&page=editor&open_in_editor=samples/listProjects.js,samples/README.md) |
+| Quickstart | [source code](https://github.com/googleapis/nodejs-resource-manager/blob/master/samples/quickstart.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-resource-manager&page=editor&open_in_editor=samples/quickstart.js,samples/README.md) |
 
 
 
@@ -142,7 +142,7 @@ More Information: [Google Cloud Platform Launch Stages][launch_stages]
 
 ## Contributing
 
-Contributions welcome! See the [Contributing Guide](https://github.com/googleapis/resource-manager/blob/master/CONTRIBUTING.md).
+Contributions welcome! See the [Contributing Guide](https://github.com/googleapis/nodejs-resource-manager/blob/master/CONTRIBUTING.md).
 
 Please note that this `README.md`, the `samples/README.md`,
 and a variety of configuration files in this repository (including `.nycrc` and `tsconfig.json`)
@@ -154,10 +154,10 @@ to its template in this
 
 Apache Version 2.0
 
-See [LICENSE](https://github.com/googleapis/resource-manager/blob/master/LICENSE)
+See [LICENSE](https://github.com/googleapis/nodejs-resource-manager/blob/master/LICENSE)
 
 [client-docs]: https://googleapis.dev/nodejs/resource/latest
-[product-docs]: https://cloud.google.com/resource-manager
+[product-docs]: https://cloud.google.com/nodejs-resource-manager
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
 [projects]: https://console.cloud.google.com/project
 [billing]: https://support.google.com/cloud/answer/6293499#enable-billing
