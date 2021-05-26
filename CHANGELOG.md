@@ -2,7 +2,7 @@
 
 [npm history][1]
 
-[1]: https://www.npmjs.com/package/@google-cloud/resource?activeTab=versions
+[1]: https://www.npmjs.com/package/@google-cloud/resource-manager?activeTab=versions
 
 ### [1.2.1](https://www.github.com/googleapis/nodejs-resource/compare/v1.2.0...v1.2.1) (2020-07-10)
 
@@ -148,13 +148,13 @@ The import syntax for this library has changed to support es modules.
 
 __old code__
 ```js
-const Resource = require('@google-cloud/resource');
+const Resource = require('@google-cloud/resource-manager');
 const resource = Resource({...});
 ```
 
 __new code__
 ```js
-const {Resource} = require('@google-cloud/resource');
+const {Resource} = require('@google-cloud/resource-manager');
 const resource = Resource({...});
 ```
 
