@@ -17,7 +17,7 @@
 // ** All changes to this file may be overwritten. **
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const resourcemanager = require('@google-cloud/resourcemanager');
+const resourcemanager = require('@google-cloud/resource-manager');
 
 function main() {
   const foldersClient = new resourcemanager.FoldersClient();
