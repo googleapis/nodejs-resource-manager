@@ -10,9 +10,9 @@
   "repository": "googleapis/nodejs-resource-manager",
   "main": "./build/src/index.js",
   "types": "./build/src/index.d.ts",
-  "files": [
+    "files": [
     "build/src",
-    "!build/src/**/*.map"
+    "build/protos"
   ],
   "keywords": [
     "google apis client",
