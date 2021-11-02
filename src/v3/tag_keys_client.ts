@@ -72,7 +72,7 @@ export class TagKeysClient {
    *
    * @param {object} [options] - The configuration object.
    * The options accepted by the constructor are described in detail
-   * in [this document](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#creating-the-client-instance).
+   * in {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#creating-the-client-instance| this document}.
    * The common options are:
    * @param {object} [options.credentials] - Credentials object.
    * @param {string} [options.credentials.client_email]
@@ -433,7 +433,7 @@ export class TagKeysClient {
    * @returns {Promise} - The promise which resolves to an array.
    *   The first element of the array is an object representing [TagKey]{@link google.cloud.resourcemanager.v3.TagKey}.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods| documentation}
    *   for more details and examples.
    * @example
    * const [response] = await client.getTagKey(request);
@@ -529,7 +529,7 @@ export class TagKeysClient {
    * @returns {Promise} - The promise which resolves to an array.
    *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods| documentation}
    *   for more details and examples.
    * @example
    * const [response] = await client.getIamPolicy(request);
@@ -622,7 +622,7 @@ export class TagKeysClient {
    * @returns {Promise} - The promise which resolves to an array.
    *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods| documentation}
    *   for more details and examples.
    * @example
    * const [response] = await client.setIamPolicy(request);
@@ -709,13 +709,13 @@ export class TagKeysClient {
    *   The set of permissions to check for the `resource`. Permissions with
    *   wildcards (such as '*' or 'storage.*') are not allowed. For more
    *   information see
-   *   [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+   *   {@link https://cloud.google.com/iam/docs/overview#permissions| IAM Overview}.
    * @param {object} [options]
    *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
    * @returns {Promise} - The promise which resolves to an array.
    *   The first element of the array is an object representing [TestIamPermissionsResponse]{@link google.iam.v1.TestIamPermissionsResponse}.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods| documentation}
    *   for more details and examples.
    * @example
    * const [response] = await client.testIamPermissions(request);
@@ -817,7 +817,7 @@ export class TagKeysClient {
    *   a long running operation. Its `promise()` method returns a promise
    *   you can `await` for.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const [operation] = await client.createTagKey(request);
@@ -872,7 +872,7 @@ export class TagKeysClient {
    * @returns {Promise} - The promise which resolves to an object.
    *   The decoded operation object has result and metadata field to get information from.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const decodedOperation = await checkCreateTagKeyProgress(name);
@@ -962,7 +962,7 @@ export class TagKeysClient {
    *   a long running operation. Its `promise()` method returns a promise
    *   you can `await` for.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const [operation] = await client.updateTagKey(request);
@@ -1023,7 +1023,7 @@ export class TagKeysClient {
    * @returns {Promise} - The promise which resolves to an object.
    *   The decoded operation object has result and metadata field to get information from.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const decodedOperation = await checkUpdateTagKeyProgress(name);
@@ -1112,7 +1112,7 @@ export class TagKeysClient {
    *   a long running operation. Its `promise()` method returns a promise
    *   you can `await` for.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const [operation] = await client.deleteTagKey(request);
@@ -1173,7 +1173,7 @@ export class TagKeysClient {
    * @returns {Promise} - The promise which resolves to an object.
    *   The decoded operation object has result and metadata field to get information from.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const decodedOperation = await checkDeleteTagKeyProgress(name);
@@ -1259,7 +1259,7 @@ export class TagKeysClient {
    *   We recommend using `listTagKeysAsync()`
    *   method described below for async iteration which you can stop as needed.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination| documentation}
    *   for more details and examples.
    */
   listTagKeys(
@@ -1323,7 +1323,7 @@ export class TagKeysClient {
    *   We recommend using `listTagKeysAsync()`
    *   method described below for async iteration which you can stop as needed.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination| documentation}
    *   for more details and examples.
    */
   listTagKeysStream(
@@ -1361,12 +1361,12 @@ export class TagKeysClient {
    * @param {object} [options]
    *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
    * @returns {Object}
-   *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+   *   An iterable Object that allows {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols| async iteration}.
    *   When you iterate the returned iterable, each element will be an object representing
    *   [TagKey]{@link google.cloud.resourcemanager.v3.TagKey}. The API will be called under the hood as needed, once per the page,
    *   so you can stop the iteration when you don't need more results.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination| documentation}
    *   for more details and examples.
    * @example
    * const iterable = client.listTagKeysAsync(request);

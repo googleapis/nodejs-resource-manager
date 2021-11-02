@@ -72,7 +72,7 @@ export class ProjectsClient {
    *
    * @param {object} [options] - The configuration object.
    * The options accepted by the constructor are described in detail
-   * in [this document](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#creating-the-client-instance).
+   * in {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#creating-the-client-instance| this document}.
    * The common options are:
    * @param {object} [options.credentials] - Credentials object.
    * @param {string} [options.credentials.client_email]
@@ -465,7 +465,7 @@ export class ProjectsClient {
    * @returns {Promise} - The promise which resolves to an array.
    *   The first element of the array is an object representing [Project]{@link google.cloud.resourcemanager.v3.Project}.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods| documentation}
    *   for more details and examples.
    * @example
    * const [response] = await client.getProject(request);
@@ -557,7 +557,7 @@ export class ProjectsClient {
    * @returns {Promise} - The promise which resolves to an array.
    *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods| documentation}
    *   for more details and examples.
    * @example
    * const [response] = await client.getIamPolicy(request);
@@ -689,7 +689,7 @@ export class ProjectsClient {
    * @returns {Promise} - The promise which resolves to an array.
    *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods| documentation}
    *   for more details and examples.
    * @example
    * const [response] = await client.setIamPolicy(request);
@@ -772,13 +772,13 @@ export class ProjectsClient {
    *   The set of permissions to check for the `resource`. Permissions with
    *   wildcards (such as '*' or 'storage.*') are not allowed. For more
    *   information see
-   *   [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+   *   {@link https://cloud.google.com/iam/docs/overview#permissions| IAM Overview}.
    * @param {object} [options]
    *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
    * @returns {Promise} - The promise which resolves to an array.
    *   The first element of the array is an object representing [TestIamPermissionsResponse]{@link google.iam.v1.TestIamPermissionsResponse}.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods| documentation}
    *   for more details and examples.
    * @example
    * const [response] = await client.testIamPermissions(request);
@@ -885,7 +885,7 @@ export class ProjectsClient {
    *   a long running operation. Its `promise()` method returns a promise
    *   you can `await` for.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const [operation] = await client.createProject(request);
@@ -940,7 +940,7 @@ export class ProjectsClient {
    * @returns {Promise} - The promise which resolves to an object.
    *   The decoded operation object has result and metadata field to get information from.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const decodedOperation = await checkCreateProjectProgress(name);
@@ -1027,7 +1027,7 @@ export class ProjectsClient {
    *   a long running operation. Its `promise()` method returns a promise
    *   you can `await` for.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const [operation] = await client.updateProject(request);
@@ -1088,7 +1088,7 @@ export class ProjectsClient {
    * @returns {Promise} - The promise which resolves to an object.
    *   The decoded operation object has result and metadata field to get information from.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const decodedOperation = await checkUpdateProjectProgress(name);
@@ -1182,7 +1182,7 @@ export class ProjectsClient {
    *   a long running operation. Its `promise()` method returns a promise
    *   you can `await` for.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const [operation] = await client.moveProject(request);
@@ -1243,7 +1243,7 @@ export class ProjectsClient {
    * @returns {Promise} - The promise which resolves to an object.
    *   The decoded operation object has result and metadata field to get information from.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const decodedOperation = await checkMoveProjectProgress(name);
@@ -1354,7 +1354,7 @@ export class ProjectsClient {
    *   a long running operation. Its `promise()` method returns a promise
    *   you can `await` for.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const [operation] = await client.deleteProject(request);
@@ -1415,7 +1415,7 @@ export class ProjectsClient {
    * @returns {Promise} - The promise which resolves to an object.
    *   The decoded operation object has result and metadata field to get information from.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const decodedOperation = await checkDeleteProjectProgress(name);
@@ -1505,7 +1505,7 @@ export class ProjectsClient {
    *   a long running operation. Its `promise()` method returns a promise
    *   you can `await` for.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const [operation] = await client.undeleteProject(request);
@@ -1566,7 +1566,7 @@ export class ProjectsClient {
    * @returns {Promise} - The promise which resolves to an object.
    *   The decoded operation object has result and metadata field to get information from.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const decodedOperation = await checkUndeleteProjectProgress(name);
@@ -1663,7 +1663,7 @@ export class ProjectsClient {
    *   We recommend using `listProjectsAsync()`
    *   method described below for async iteration which you can stop as needed.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination| documentation}
    *   for more details and examples.
    */
   listProjects(
@@ -1733,7 +1733,7 @@ export class ProjectsClient {
    *   We recommend using `listProjectsAsync()`
    *   method described below for async iteration which you can stop as needed.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination| documentation}
    *   for more details and examples.
    */
   listProjectsStream(
@@ -1777,12 +1777,12 @@ export class ProjectsClient {
    * @param {object} [options]
    *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
    * @returns {Object}
-   *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+   *   An iterable Object that allows {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols| async iteration}.
    *   When you iterate the returned iterable, each element will be an object representing
    *   [Project]{@link google.cloud.resourcemanager.v3.Project}. The API will be called under the hood as needed, once per the page,
    *   so you can stop the iteration when you don't need more results.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination| documentation}
    *   for more details and examples.
    * @example
    * const iterable = client.listProjectsAsync(request);
@@ -1905,7 +1905,7 @@ export class ProjectsClient {
    *   We recommend using `searchProjectsAsync()`
    *   method described below for async iteration which you can stop as needed.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination| documentation}
    *   for more details and examples.
    */
   searchProjects(
@@ -2003,7 +2003,7 @@ export class ProjectsClient {
    *   We recommend using `searchProjectsAsync()`
    *   method described below for async iteration which you can stop as needed.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination| documentation}
    *   for more details and examples.
    */
   searchProjectsStream(
@@ -2075,12 +2075,12 @@ export class ProjectsClient {
    * @param {object} [options]
    *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
    * @returns {Object}
-   *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+   *   An iterable Object that allows {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols| async iteration}.
    *   When you iterate the returned iterable, each element will be an object representing
    *   [Project]{@link google.cloud.resourcemanager.v3.Project}. The API will be called under the hood as needed, once per the page,
    *   so you can stop the iteration when you don't need more results.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination| documentation}
    *   for more details and examples.
    * @example
    * const iterable = client.searchProjectsAsync(request);

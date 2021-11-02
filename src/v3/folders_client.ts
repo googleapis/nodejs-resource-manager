@@ -74,7 +74,7 @@ export class FoldersClient {
    *
    * @param {object} [options] - The configuration object.
    * The options accepted by the constructor are described in detail
-   * in [this document](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#creating-the-client-instance).
+   * in {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#creating-the-client-instance| this document}.
    * The common options are:
    * @param {object} [options.credentials] - Credentials object.
    * @param {string} [options.credentials.client_email]
@@ -468,7 +468,7 @@ export class FoldersClient {
    * @returns {Promise} - The promise which resolves to an array.
    *   The first element of the array is an object representing [Folder]{@link google.cloud.resourcemanager.v3.Folder}.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods| documentation}
    *   for more details and examples.
    * @example
    * const [response] = await client.getFolder(request);
@@ -563,7 +563,7 @@ export class FoldersClient {
    * @returns {Promise} - The promise which resolves to an array.
    *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods| documentation}
    *   for more details and examples.
    * @example
    * const [response] = await client.getIamPolicy(request);
@@ -656,7 +656,7 @@ export class FoldersClient {
    * @returns {Promise} - The promise which resolves to an array.
    *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods| documentation}
    *   for more details and examples.
    * @example
    * const [response] = await client.setIamPolicy(request);
@@ -743,13 +743,13 @@ export class FoldersClient {
    *   The set of permissions to check for the `resource`. Permissions with
    *   wildcards (such as '*' or 'storage.*') are not allowed. For more
    *   information see
-   *   [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+   *   {@link https://cloud.google.com/iam/docs/overview#permissions| IAM Overview}.
    * @param {object} [options]
    *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
    * @returns {Promise} - The promise which resolves to an array.
    *   The first element of the array is an object representing [TestIamPermissionsResponse]{@link google.iam.v1.TestIamPermissionsResponse}.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods| documentation}
    *   for more details and examples.
    * @example
    * const [response] = await client.testIamPermissions(request);
@@ -871,7 +871,7 @@ export class FoldersClient {
    *   a long running operation. Its `promise()` method returns a promise
    *   you can `await` for.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const [operation] = await client.createFolder(request);
@@ -926,7 +926,7 @@ export class FoldersClient {
    * @returns {Promise} - The promise which resolves to an object.
    *   The decoded operation object has result and metadata field to get information from.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const decodedOperation = await checkCreateFolderProgress(name);
@@ -1024,7 +1024,7 @@ export class FoldersClient {
    *   a long running operation. Its `promise()` method returns a promise
    *   you can `await` for.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const [operation] = await client.updateFolder(request);
@@ -1085,7 +1085,7 @@ export class FoldersClient {
    * @returns {Promise} - The promise which resolves to an object.
    *   The decoded operation object has result and metadata field to get information from.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const decodedOperation = await checkUpdateFolderProgress(name);
@@ -1186,7 +1186,7 @@ export class FoldersClient {
    *   a long running operation. Its `promise()` method returns a promise
    *   you can `await` for.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const [operation] = await client.moveFolder(request);
@@ -1247,7 +1247,7 @@ export class FoldersClient {
    * @returns {Promise} - The promise which resolves to an object.
    *   The decoded operation object has result and metadata field to get information from.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const decodedOperation = await checkMoveFolderProgress(name);
@@ -1336,7 +1336,7 @@ export class FoldersClient {
    *   a long running operation. Its `promise()` method returns a promise
    *   you can `await` for.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const [operation] = await client.deleteFolder(request);
@@ -1397,7 +1397,7 @@ export class FoldersClient {
    * @returns {Promise} - The promise which resolves to an object.
    *   The decoded operation object has result and metadata field to get information from.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const decodedOperation = await checkDeleteFolderProgress(name);
@@ -1486,7 +1486,7 @@ export class FoldersClient {
    *   a long running operation. Its `promise()` method returns a promise
    *   you can `await` for.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const [operation] = await client.undeleteFolder(request);
@@ -1547,7 +1547,7 @@ export class FoldersClient {
    * @returns {Promise} - The promise which resolves to an object.
    *   The decoded operation object has result and metadata field to get information from.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations| documentation}
    *   for more details and examples.
    * @example
    * const decodedOperation = await checkUndeleteFolderProgress(name);
@@ -1645,7 +1645,7 @@ export class FoldersClient {
    *   We recommend using `listFoldersAsync()`
    *   method described below for async iteration which you can stop as needed.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination| documentation}
    *   for more details and examples.
    */
   listFolders(
@@ -1715,7 +1715,7 @@ export class FoldersClient {
    *   We recommend using `listFoldersAsync()`
    *   method described below for async iteration which you can stop as needed.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination| documentation}
    *   for more details and examples.
    */
   listFoldersStream(
@@ -1759,12 +1759,12 @@ export class FoldersClient {
    * @param {object} [options]
    *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
    * @returns {Object}
-   *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+   *   An iterable Object that allows {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols| async iteration}.
    *   When you iterate the returned iterable, each element will be an object representing
    *   [Folder]{@link google.cloud.resourcemanager.v3.Folder}. The API will be called under the hood as needed, once per the page,
    *   so you can stop the iteration when you don't need more results.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination| documentation}
    *   for more details and examples.
    * @example
    * const iterable = client.listFoldersAsync(request);
@@ -1875,7 +1875,7 @@ export class FoldersClient {
    *   We recommend using `searchFoldersAsync()`
    *   method described below for async iteration which you can stop as needed.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination| documentation}
    *   for more details and examples.
    */
   searchFolders(
@@ -1965,7 +1965,7 @@ export class FoldersClient {
    *   We recommend using `searchFoldersAsync()`
    *   method described below for async iteration which you can stop as needed.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination| documentation}
    *   for more details and examples.
    */
   searchFoldersStream(
@@ -2029,12 +2029,12 @@ export class FoldersClient {
    * @param {object} [options]
    *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
    * @returns {Object}
-   *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+   *   An iterable Object that allows {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols| async iteration}.
    *   When you iterate the returned iterable, each element will be an object representing
    *   [Folder]{@link google.cloud.resourcemanager.v3.Folder}. The API will be called under the hood as needed, once per the page,
    *   so you can stop the iteration when you don't need more results.
    *   Please see the
-   *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+   *   {@link https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination| documentation}
    *   for more details and examples.
    * @example
    * const iterable = client.searchFoldersAsync(request);
